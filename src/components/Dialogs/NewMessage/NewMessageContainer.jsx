@@ -18,10 +18,3 @@ export const CreateMessageContainer = (props) => {
     );
 }
 
-echo "# edfff" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remgit remote add origin https://github.com/meadchen/react-project.gitote add origin https://github.com/meadchen/edfff.git
-    git push -u origin main
