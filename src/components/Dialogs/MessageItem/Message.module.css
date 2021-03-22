@@ -1,0 +1,16 @@
+
+
+.message{
+    font-size: 16px;
+    width: 80%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 0 20px;
+}
+
+.message:nth-child(2n){
+    text-align: right;
+    margin: 0 0 20px auto;
+    border: 2px solid #713C4D;
+}

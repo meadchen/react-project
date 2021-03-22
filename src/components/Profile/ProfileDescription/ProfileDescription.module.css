@@ -1,0 +1,18 @@
+
+.contentMain{
+  display: flex;
+}
+.contentMain img{
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin: 0 30px 0 0;
+}
+.contentMain p{
+  font-size: 22px;
+  font-weight: 600;
+}
+.contentMain span{
+  font-size: 20px;
+  font-weight: 400;
+}

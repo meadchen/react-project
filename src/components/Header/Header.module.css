@@ -1,0 +1,14 @@
+.header{
+  grid-area: h;
+  background-color: #F9F8FC;
+  display: flex;
+  align-items: center;
+}
+.header img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 0 0 30px;
+  object-fit: cover;
+}
+
