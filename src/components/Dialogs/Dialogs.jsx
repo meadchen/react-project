@@ -5,11 +5,11 @@ import {Message} from "./MessageItem/Message";
 import { CreateMessageContainer} from './NewMessage/NewMessageContainer'
 
 const Dialogs = (props) => {
+    debugger
 
-
-    let dialogElements = props.state.dialogsData.map(dialog => (
+    let dialogElements = props.store.getState().messagesPage.dialogsData.map(dialog => (
         <DialogItem name={dialog.name} id={dialog.id} src={dialog.src}/>));
-    let messageElements = props.state.messages.map(message => (<Message message={message.message}/>));
+    let messageElements = props.store.getState().messagesPage.messages.map(message => (<Message message={message.message}/>));
 
 
     return (

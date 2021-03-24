@@ -2,19 +2,27 @@ import s from "./NewMessage.module.css";
 import React from "react";
 import {addMessActionCreator, updateMessActionCreator} from "../../../redux/messages-reducer";
 import {CreateMessage} from "./NewMessage";
+import {connect} from "react-redux";
 
-export const CreateMessageContainer = (props) => {
-    let addNewMessage = () =>{
-        props.store.dispatch(addMessActionCreator());
+
+let mapStateToProps = (state) => {
+    return {
+        messagesPage: state.messagesPage,
+        newMesText: state.newMesText
     }
-    let state = props.store.getState().messagesPage;
-    let onMesChange = (textMessage) => {
-        props.store.dispatch(updateMessActionCreator(textMessage));
-    }
-    return (
-        <CreateMessage addMessage ={ addNewMessage }
-                       updateMessage={ onMesChange }
-                       newMesText={state.newMesText}/>
-    );
 }
+
+let mapDispatchToProps = (dispatch) => {
+    return{
+        addMessage: () => {
+            dispatch(addMessActionCreator());
+        },
+        updateMessage: (textMessage) => {
+            dispatch(updateMessActionCreator(textMessage));
+        }
+    }
+}
+
+
+export const CreateMessageContainer = connect(mapStateToProps, mapDispatchToProps)(CreateMessage);
 
