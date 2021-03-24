@@ -1,17 +1,15 @@
-import s from "./NewMessage.module.css";
 import React from "react";
-import {addMessActionCreator, updateMessActionCreator} from "../../../redux/messages-reducer";
-import {CreateMessage} from "./NewMessage";
+import {addMessActionCreator, updateMessActionCreator} from "../../redux/messages-reducer";
 import {connect} from "react-redux";
+import Dialogs from "./Dialogs";
 
 
 let mapStateToProps = (state) => {
     return {
         messagesPage: state.messagesPage,
-        newMesText: state.newMesText
+        newMesText: state.messagesPage.newMesText
     }
 }
-
 let mapDispatchToProps = (dispatch) => {
     return{
         addMessage: () => {
@@ -24,5 +22,5 @@ let mapDispatchToProps = (dispatch) => {
 }
 
 
-export const CreateMessageContainer = connect(mapStateToProps, mapDispatchToProps)(CreateMessage);
+export const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 

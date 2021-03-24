@@ -2,16 +2,22 @@ import React from "react";
 import s from './Dialogs.module.css'
 import {DialogItem} from "./DialogItem/DialogItem";
 import {Message} from "./MessageItem/Message";
-import { CreateMessageContainer} from './NewMessage/NewMessageContainer'
+
 
 const Dialogs = (props) => {
-    debugger
 
-    let dialogElements = props.store.getState().messagesPage.dialogsData.map(dialog => (
+
+    let dialogElements = props.messagesPage.dialogsData.map(dialog => (
         <DialogItem name={dialog.name} id={dialog.id} src={dialog.src}/>));
-    let messageElements = props.store.getState().messagesPage.messages.map(message => (<Message message={message.message}/>));
+    let messageElements = props.messagesPage.messages.map(message => (<Message message={message.message}/>));
 
-
+    let addNewMessage = () =>{
+        props.addMessage();
+    }
+    let onMesChange = (e) => {
+        let textMessage = e.target.value;
+        props.updateMessage(textMessage);
+    }
     return (
         <div className={s.dialogs_wrapper}>
             <div className={s.dialogs_items}>
@@ -19,7 +25,10 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages_block}>
                 {messageElements}
-                <CreateMessageContainer store={props.store}/>
+                <div className={s.newMessage}>
+                    <textarea onChange={onMesChange} value={props.newMesText}></textarea>
+                    <button onClick={addNewMessage}>Add message</button>
+                </div>
             </div>
         </div>
     )
