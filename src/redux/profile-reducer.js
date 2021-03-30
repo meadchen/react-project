@@ -32,8 +32,9 @@ let profileReducer = (state = initionalState, action) => {
             return stateCopy;
         }
         case ADD_LIKE:
-            state.postsData.likeCount = action.like;
-            return state;
+            let stateCopy = {...state};
+            stateCopy.postsData.likeCount = action.like;
+            return stateCopy;
         default:
             return state;
     }

@@ -1,0 +1,25 @@
+.usersContainer{
+    display: flex;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px dashed #713C4D;
+}
+
+.usersLeft{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.usersLeft img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 0 20px;
+}
+
+.usersRight{
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+}
